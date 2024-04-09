@@ -119,7 +119,8 @@ class GNN_Model(tf.keras.Model):
         
         # 打印张量的维度
         print("link_state_shape =", link_state_shape)
-
+        link_state.set_shape(link_state_shape)
+        
         link_state = self.link_embedding(link_state)
 
         # Initialize the initial hidden state for paths
