@@ -86,7 +86,7 @@ class GNN_Model(tf.keras.Model):
         traffic = tf.expand_dims(tf.squeeze(inputs['traffic']), axis=1)
         packets = tf.expand_dims(tf.squeeze(inputs['packets']), axis=1)
         capacity = tf.expand_dims(tf.squeeze(inputs['capacity']), axis=1)
-        print('packets=',capacity)
+        print('packets=',packets)
         print('capacity=',capacity)
         scale = tf.expand_dims(tf.squeeze(inputs['scale']), axis=1)
         link_to_path = tf.squeeze(inputs['link_to_path'])
