@@ -49,7 +49,7 @@ class GNN_Model(tf.keras.Model):
         ])
 
         self.aggr_mlp = tf.keras.Sequential([
-            tf.keras.layers.Input(shape=4 * int(self.config['HYPERPARAMETERS']['path_state_dim'])),
+            tf.keras.layers.Input(shape=(4 * int(self.config['HYPERPARAMETERS']['path_state_dim']),)),
             tf.keras.layers.Dense(int(self.config['HYPERPARAMETERS']['readout_units']),
                                   activation=tf.keras.activations.relu),
             tf.keras.layers.Dense(int(self.config['HYPERPARAMETERS']['readout_units']),
