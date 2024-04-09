@@ -41,7 +41,7 @@ class GNN_Model(tf.keras.Model):
         ])
 
         self.path_embedding = tf.keras.Sequential([
-            tf.keras.layers.Input(shape=2),
+            tf.keras.layers.Input(shape=(2,)),
             tf.keras.layers.Dense(int(int(self.config['HYPERPARAMETERS']['path_state_dim']) / 2),
                                   activation=tf.keras.activations.relu),
             tf.keras.layers.Dense(int(self.config['HYPERPARAMETERS']['path_state_dim']),
