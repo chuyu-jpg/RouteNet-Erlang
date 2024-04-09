@@ -96,5 +96,4 @@ model.fit(ds_train,
           validation_data=ds_test,
           validation_steps=20,
           callbacks=[cp_callback],
-          batch_size=32,
-          use_multiprocessing=True)
+          batch_size=32)
