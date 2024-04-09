@@ -60,7 +60,9 @@ class GNN_Model(tf.keras.Model):
 
         # Readout Neural Network. It expects as input the path states and outputs the per-path delay
         self.readout = tf.keras.Sequential([
-            tf.keras.layers.Input(shape=int(self.config['HYPERPARAMETERS']['link_state_dim'])),
+            tf.keras.layers.Input(
+                                 shape=(int(self.config['HYPERPARAMETERS']['path_state_dim']),)
+                                 ),
             tf.keras.layers.Dense(int(self.config['HYPERPARAMETERS']['readout_units']),
                                   activation=tf.keras.activations.relu,
                                   kernel_regularizer=tf.keras.regularizers.l1_l2(l1=0.01, l2=0.01)),
