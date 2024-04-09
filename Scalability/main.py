@@ -79,7 +79,7 @@ if latest is not None:
 else:
     print("Starting training from scratch...")
 
-filepath = os.path.join(ckpt_dir, "{epoch:02d}-{val_loss:.2f}")
+filepath = os.path.join(ckpt_dir, "{epoch:02d}-{val_loss:.2f}.weights.h5")
 
 cp_callback = tf.keras.callbacks.ModelCheckpoint(
     filepath=filepath,
